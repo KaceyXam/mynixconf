@@ -2,6 +2,7 @@
   flake.nixosModules.myMachineConfiguration = { pkgs, lib, ... }: {
     imports = [ 
       self.nixosModules.myMachineHardware
+      self.nixosModules.niri
     ];
 
     boot.loader.systemd-boot.enable = true;
