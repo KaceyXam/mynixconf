@@ -3,7 +3,7 @@
   let
     mod = "SUPER";
     terminal = lib.getExe pkgs.alacritty;
-    menu = "${lib.getExe self'.packages.myNoctalia} ipc call launcher toggle";
+    menu = "${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.myNoctalia} ipc call launcher toggle";
   in {
     programs.hyprland = {
       enable = true;
