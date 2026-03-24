@@ -3,12 +3,8 @@
     programs.hyprland = {
       enable = true;
     };
-  };
 
-  perSystem = { pkgs, ... }: {
-    packages.hyprland = inputs.wrappers.lib.wrapModule {
-      inherit pkgs;
-      imports = [self.nixosModules.hyprland];
-    };
-  }; 
+    home.programs.hyprland.enable = true;
+    home.programs.hyprland.settings = {};
+  };
 }
