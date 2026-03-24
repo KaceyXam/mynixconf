@@ -3,6 +3,7 @@
     imports = [ 
       self.nixosModules.myMachineHardware
       self.nixosModules.niri
+      self.nixosModules.hyprland
     ];
 
     boot.loader.systemd-boot.enable = true;
@@ -178,7 +179,6 @@
 
     xdg.portal.enable = true;
     xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
-    programs.hyprland.enable = true;
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
