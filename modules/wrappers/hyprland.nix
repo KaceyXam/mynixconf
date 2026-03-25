@@ -1,23 +1,25 @@
 { self, inputs, ... }: {
   
-  flake.nixosModules.hyprlandWrapper = {
-    config,
-    pkgs,
-    wlib,
-    lib,
-    ...
-  }: {
-    imports = [ wlib.modules.default ];
+  perSystem = { ... }: {
+    packages.hyprlandWrapper = {
+      config,
+      pkgs,
+      wlib,
+      lib,
+      ...
+    }: {
+      imports = [ wlib.modules.default ];
   
-    options = {
-      settings = lib.mkOption {
-        description = ''
-          Hyprland configuration settings.
-        '';
-        default = {};
-        type = lib.types.submodule {
-          freeformType = lib,types.attrs;
-        }
+      options = {
+        settings = lib.mkOption {
+          description = ''
+            Hyprland configuration settings.
+          '';
+          default = {};
+          type = lib.types.submodule {
+            freeformType = lib,types.attrs;
+          }
+        };
       };
     };
   };

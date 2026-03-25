@@ -6,8 +6,6 @@
     };
   };
 
-  hyprlandWrapper = {}: {};
-  
   perSystem = { pkgs, lib, self', ... }:
   let
     mod = "SUPER";
@@ -15,7 +13,7 @@
     noctalia = lib.getExe self'.packages.myNoctalia;
     menu = "${noctalia} ipc call launcher toggle";
   in {
-    packages.myHyprland = hyprlandWrapper.wrap {
+    packages.myHyprland = packages.hyprlandWrapper.wrap {
       inherit pkgs;
       "ecosystem:no_update_news" = true;
       monitor = "preferred auto auto";
