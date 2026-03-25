@@ -1,16 +1,22 @@
 { self, inputs, ... }: {
-  flake.nixosModules.hyprland = { pkgs, lib, self', ... }:
+  flake.nixosModules.hyprland = { pkgs, lib, self', ... }: {
+    programs.hyprland = {
+      enable = true;
+      package = self.packages.${pkgs.stdenv.hostPlatgorm.system}.myHyprland;
+    };
+  };
+
+  hyprlandWrapper = {}: {};
+  
+  perSystem = { pkgs, lib, self', ... }:
   let
     mod = "SUPER";
     terminal = lib.getExe pkgs.alacritty;
-    menu = "${lib.getExe self.packages.${pkgs.stdenv.hostPlatform.system}.myNoctalia} ipc call launcher toggle";
+    noctalia = lib.getExe self'.packages.myNoctalia;
+    menu = "${noctalia} ipc call launcher toggle";
   in {
-    programs.hyprland = {
-      enable = true;
-    };
-
-    home.programs.hyprland.enable = true;
-    home.programs.hyprland.settings = {
+    packages.myHyprland = hyprlandWrapper.wrap {
+      inherit pkgs;
       "ecosystem:no_update_news" = true;
       monitor = "preferred auto auto";
       env = [
@@ -161,7 +167,7 @@
       };
 
       exec-once = [
-        "noctalia-shell"
+        noctalia
       ];
     };
   };
