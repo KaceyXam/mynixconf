@@ -110,15 +110,15 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1774298843,
-        "narHash": "sha256-GOUCZ3c6dUkI8VhkRwxNrReB90wQC0D/1yNvGKr9dv4=",
-        "owner": "BirdeeHub",
+        "lastModified": 1774473906,
+        "narHash": "sha256-ycPi1s/SFqM7ABBeFJopqkT0IENJlz+LeL9oOQ7dagE=",
+        "owner": "KaceyXam",
         "repo": "nix-wrapper-modules",
-        "rev": "8981b8623ff4355b681a7ecb47016ece58ff92c2",
+        "rev": "e1b81c6a642377105f3b79e5b003e49a201a6b68",
         "type": "github"
       },
       "original": {
-        "owner": "BirdeeHub",
+        "owner": "KaceyXam",
         "repo": "nix-wrapper-modules",
         "type": "github"
       }

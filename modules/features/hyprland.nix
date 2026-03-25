@@ -13,7 +13,7 @@
     noctalia = lib.getExe self'.packages.myNoctalia;
     menu = "${noctalia} ipc call launcher toggle";
   in {
-    packages.myHyprland = packages.hyprlandWrapper.wrap {
+    packages.myHyprland = inputs.wrapper-modules.wrappers.hyprland.wrap {
       inherit pkgs;
       "ecosystem:no_update_news" = true;
       monitor = "preferred auto auto";
