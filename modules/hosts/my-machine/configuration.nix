@@ -2,6 +2,7 @@
   flake.nixosModules.myMachineConfiguration = { pkgs, lib, ... }: {
     imports = [ 
       self.nixosModules.myMachineHardware
+      inputs.home-manager.nixosModules.default
       self.nixosModules.niri
       self.nixosModules.hyprland
     ];
@@ -100,9 +101,12 @@
 
     environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
 
-    home-manager.users.kxkniffen = { pkgs, ... }: {
-      home.packages = [ pkgs.hello ];
-      home.stateVersion = "24.11";
+    home-manager = {
+      extraSpecialArgs = { inherit inputs; };
+      users.kxkniffen = { pkgs, ... }: {
+        home.packages = [ pkgs.hello ];
+        home.stateVersion = "24.11";
+      };
     };
 
     environment.systemPackages = with pkgs; [
