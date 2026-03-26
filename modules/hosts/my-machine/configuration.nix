@@ -102,6 +102,7 @@
     environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
 
     home-manager = {
+      backupFileExtension = "bak";
       extraSpecialArgs = { inherit inputs; };
       users.kxkniffen = { pkgs, ... }: {
         home.packages = [ pkgs.hello ];
