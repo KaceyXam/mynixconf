@@ -1,7 +1,6 @@
 { self, inputs, ... }: {
   flake.nixosModules.myMachineConfiguration = { pkgs, lib, ... }: {
     imports = [ 
-      inputs.home-manager.nixosModules.home-manager
       self.nixosModules.myMachineHardware
       self.nixosModules.niri
       self.nixosModules.hyprland
