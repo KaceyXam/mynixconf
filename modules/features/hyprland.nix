@@ -2,7 +2,8 @@
   flake.nixosModules.hyprland = { pkgs, lib, self', ... }: {
     programs.hyprland = {
       enable = true;
-      package = self.packages.${pkgs.stdenv.hostPlatgorm.system}.myHyprland;
+      withUWSM = true;
+      package = self.packages.${pkgs.stdenv.hostPlatform.system}.myHyprland;
     };
   };
 
