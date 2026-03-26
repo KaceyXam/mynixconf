@@ -6,7 +6,7 @@
     import-tree.url = "github:vic/import-tree";
 
     wrappers.url = "github:Lassulus/wrappers";
-    wrapper-modules.url = "github:KaceyXam/nix-wrapper-modules";
+    wrapper-modules.url = "/home/kxkniffen/Documents/Projects/nix-wrapper-modules";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);

@@ -110,17 +110,14 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1774473906,
-        "narHash": "sha256-ycPi1s/SFqM7ABBeFJopqkT0IENJlz+LeL9oOQ7dagE=",
-        "owner": "KaceyXam",
-        "repo": "nix-wrapper-modules",
-        "rev": "e1b81c6a642377105f3b79e5b003e49a201a6b68",
-        "type": "github"
+        "lastModified": 1774474883,
+        "narHash": "sha256-eNhnMX7ksmwCWex5e0oAeZQyIl7qVdUGmtnNM0zWw9Y=",
+        "path": "/home/kxkniffen/Documents/Projects/nix-wrapper-modules",
+        "type": "path"
       },
       "original": {
-        "owner": "KaceyXam",
-        "repo": "nix-wrapper-modules",
-        "type": "github"
+        "path": "/home/kxkniffen/Documents/Projects/nix-wrapper-modules",
+        "type": "path"
       }
     },
     "wrappers": {
