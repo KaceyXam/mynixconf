@@ -16,6 +16,7 @@
   in {
     packages.myHyprland = inputs.wrapper-modules.wrappers.hyprland.wrap {
       inherit pkgs;
+      "hyprland.conf" = ./hyprland.conf;
       settings = {
         "ecosystem:no_update_news" = true;
         monitor = "preferred auto auto";

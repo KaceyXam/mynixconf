@@ -110,8 +110,8 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1774485335,
-        "narHash": "sha256-DjOMr3jS0hdZbSaGbeXig9RMpDeaxvr8BPFZ6lLlivk=",
+        "lastModified": 1774485938,
+        "narHash": "sha256-GCeJhvmzIvxWziq3f0uw++ByHSf1nnxsOTqGQUKH6bc=",
         "path": "/home/kxkniffen/Documents/Projects/nix-wrapper-modules",
         "type": "path"
       },
