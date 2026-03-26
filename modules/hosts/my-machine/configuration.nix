@@ -3,7 +3,7 @@
     imports = [ 
       self.nixosModules.myMachineHardware
       inputs.home-manager.nixosModules.default
-      self.nixosModules.niri
+      #self.nixosModules.niri
       self.nixosModules.hyprland
     ];
 
@@ -131,25 +131,12 @@
       kitty
       alacritty
 
-      waybar
-
-      mako
       libnotify
-
-      swww    
-
-      fuzzel
 
       networkmanagerapplet
 
       brightnessctl
       iwd
-
-      astal.hyprland
-      astal.battery
-      astal.mpris
-      astal.network
-      astal.wireplumber
 
       zip
       unzip
