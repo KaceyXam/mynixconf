@@ -1,6 +1,7 @@
 { self, inputs, ... }: {
   flake.nixosModules.myMachineConfiguration = { pkgs, lib, ... }: {
     imports = [ 
+      inputs.home-manager.nixosModules.home-manager
       self.nixosModules.myMachineHardware
       self.nixosModules.niri
       self.nixosModules.hyprland
@@ -100,6 +101,11 @@
 
     environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
 
+    home-manager.users.kxkniffen = { pkgs, ... }: {
+      home.packages = [ pkgs.hello ];
+      home.stateVersion = "24.11";
+    };
+
     environment.systemPackages = with pkgs; [
   	  git
     	helix
@@ -178,7 +184,7 @@
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
     xdg.portal.enable = true;
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
+    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
