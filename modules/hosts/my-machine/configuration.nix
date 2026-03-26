@@ -103,6 +103,7 @@
 
     home-manager = {
       backupFileExtension = "bak";
+      overwriteBackup = true;
       extraSpecialArgs = { inherit inputs; };
       users.kxkniffen = { pkgs, ... }: {
         home.packages = [ pkgs.hello ];

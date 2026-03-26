@@ -18,7 +18,7 @@
         enable = true;
         settings = {
           "ecosystem:no_update_news" = true;
-          monitor = "preferred auto auto";
+          monitor = ",preferred,auto,auto";
           env = [
             "XCURSOR_SIZE,24"
             "HYPRCURSOR_SIZE,24"
@@ -39,7 +39,7 @@
           };
 
           source = [
-            "noctalia-colors.conf"
+            "./noctalia/noctalia-colors.conf"
           ];
 
           decoration = {
