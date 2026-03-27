@@ -108,6 +108,11 @@
       users.kxkniffen = { pkgs, ... }: {
         home.packages = [ pkgs.hello ];
         home.stateVersion = "24.11";
+
+        programs.gh = {
+          enable = true;
+          gitCredentialHelper.enable = true;
+        };
       };
     };
 
