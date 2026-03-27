@@ -263,7 +263,7 @@
       "name": "Olathe,ks",
       "weatherEnabled": true,
       "weatherShowEffects": true,
-      "useFahrenheit": false,
+      "useFahrenheit": true,
       "use12hourFormat": false,
       "showWeekNumberInCalendar": false,
       "showCalendarEvents": true,
@@ -271,7 +271,7 @@
       "analogClockInCalendar": false,
       "firstDayOfWeek": -1,
       "hideWeatherTimezone": false,
-      "hideWeatherCityName": false
+      "hideWeatherCityName": true
     },
     "calendar": {
       "cards": [
@@ -705,8 +705,8 @@
     "openedPanel": "",
     "lockScreenActive": false,
     "wallpapers": {
-      "eDP-1": "/home/kxkniffen/Wallpapers/ryan-hutton-Jztmx9yqjBw-unsplash.jpg",
-      "winit": "/home/kxkniffen/Wallpapers/ryan-hutton-Jztmx9yqjBw-unsplash.jpg"
+      "eDP-1": "/home/kxkniffen/Wallpapers/forest.jpg",
+      "winit": "/home/kxkniffen/Wallpapers/forest.jpg"
     },
     "desktopWidgetsEditMode": false,
     "display": {
@@ -718,7 +718,7 @@
         "refresh_rate": 59.999,
         "x": 0,
         "y": 0,
-        "active_workspace": 1,
+        "active_workspace": 3,
         "vrr": false,
         "focused": true
       }

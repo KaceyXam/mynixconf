@@ -5,7 +5,9 @@
     mod = "SUPER";
     terminal = lib.getExe pkgs.alacritty;
     noctalia = lib.getExe self'.myNoctalia;
-    menu = "${noctalia} ipc call launcher toggle";
+    ipc = "${noctalia} ipc call";
+    menu = "${ipc} launcher toggle";
+    lock = "${ipc} lockScreen lock";
   in
   {
     programs.hyprland = {
@@ -127,7 +129,7 @@
               "${mod}, V, togglefloating"
               "${mod}, P, pseudo" #dwindle
               "${mod}, J, togglesplit" #dwindle
-              "${mod} SHIFT, L, exec, ipc lockScreen lock"
+              "${mod} SHIFT, L, exec, ${lock}"
 
               "${mod}, left, moveFocus, l"
               "${mod}, right, moveFocus, r"
