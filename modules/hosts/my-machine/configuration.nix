@@ -3,6 +3,7 @@
     imports = [ 
       self.nixosModules.myMachineHardware
       inputs.home-manager.nixosModules.default
+      inputs.mangowm.hmModules.mango
       inputs.mangowm.nixosModules.mango
       #self.nixosModules.niri
       self.nixosModules.hyprland
