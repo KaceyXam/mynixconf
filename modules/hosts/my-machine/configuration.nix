@@ -3,11 +3,11 @@
     imports = [ 
       self.nixosModules.myMachineHardware
       inputs.home-manager.nixosModules.default
-      inputs.mangowm.hmModules.mango
-      inputs.mangowm.nixosModules.mango
-      #self.nixosModules.niri
+      # inputs.mangowm.hmModules.mango
+      # inputs.mangowm.nixosModules.mango
+      self.nixosModules.niri
       self.nixosModules.hyprland
-      self.nixosModules.mangowm
+      # self.nixosModules.mangowm
     ];
 
     boot.loader.systemd-boot.enable = true;
