@@ -45,7 +45,8 @@
 
         window-rules = [
           {
-            geometry-corner-radius = 12;
+            geometry-corner-radius = 6;
+            clip-to-geometry = true;
           }
         ];
         
