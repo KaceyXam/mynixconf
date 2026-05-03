@@ -10,13 +10,13 @@
       servers = {
         modded = {
           enable = true;
-          package = pkgs.fabricServers.fabric-1_21_11;
+          package = pkgs.vanillaServers.vanilla-1_21_11;
 
           serverProperties = {};
 
-          symlinks = {
-            "mods" = ../../modsList;
-          };
+          # symlinks = {
+          #   "mods" = ../../modsList;
+          # };
         };
       };
     };
