@@ -6,6 +6,8 @@
       url = "github:nix-community/home-manager";
     };
 
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 

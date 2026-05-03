@@ -1,18 +1,23 @@
 { self, inputs, ... }: {
   flake.nixosModules.minecraftServer = { pkgs, lib, ... }: {
-    services.minecraft-server = {
+    imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
+    nixpkgs.overlays =  [ inputs.nix-minecraft.overlay ]; 
+    
+    services.minecraft-servers = {
       enable = true;
       eula = true;
-      openFirewall = true;
-      declarative = true;
       
-      # package = pkgs.papermc;
+      servers = {
+        modded = {
+          enable = true;
+          package = pkgs.fabricServers.fabric-1_21_11;
 
-      serverProperties = {
-        port = 25566;
-        gamemode = "survival";
-        difficulty = "normal";
-        simulation-distance = 8;
+          serverProperties = {};
+
+          symlinks = {
+            "mods" = ../../modsList;
+          };
+        };
       };
     };
   };
