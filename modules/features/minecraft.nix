@@ -25,6 +25,9 @@
           symlinks = {
             "mods" = "${modpack}/mods";
           };
+          operators = {
+            KaceyXamComics = "98026ffc-e6de-4ad1-914d-26fcdfbf1a88";
+          };
           # files = {
           #   "config" = "${modpack}/config";
           # };
