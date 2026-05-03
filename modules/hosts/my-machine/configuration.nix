@@ -8,7 +8,7 @@
       self.nixosModules.niri
       self.nixosModules.hyprland
       # self.nixosModules.mangowm
-      self.nixosModules.minecraftServer
+      # self.nixosModules.minecraftServer
     ];
 
     boot.loader.systemd-boot.enable = true;
