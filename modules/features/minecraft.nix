@@ -17,7 +17,7 @@
       servers = {
         modded = {
           enable = true;
-          package = pkgs.neoforgeServers.neoforge-1_21_11;
+          package = pkgs.neoforgeServers.neoforge-1_21_1;
 
           serverProperties = {};
 
