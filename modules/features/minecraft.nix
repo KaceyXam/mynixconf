@@ -6,17 +6,18 @@
     services.minecraft-servers = {
       enable = true;
       eula = true;
+      openFirewall = true;
       
       servers = {
         modded = {
           enable = true;
-          package = pkgs.vanillaServers.vanilla-1_21_11;
+          package = pkgs.fabricServers.fabric-1_21_11;
 
           serverProperties = {};
 
-          # symlinks = {
-          #   "mods" = ../../modsList;
-          # };
+          symlinks = {
+            "mods" = ../../modsList;
+          };
         };
       };
     };
