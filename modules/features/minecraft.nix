@@ -3,7 +3,13 @@
     imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
     nixpkgs.overlays =  [ inputs.nix-minecraft.overlay ]; 
     
-    services.minecraft-servers = {
+    services.minecraft-servers =
+    let
+      modpack = pkgs.fetchModrinthModpack {
+        src = ../../modpacks/Modded-Kniffen-Fam.mrpack;
+        packHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+      };
+    in {
       enable = true;
       eula = true;
       openFirewall = true;
@@ -11,12 +17,15 @@
       servers = {
         modded = {
           enable = true;
-          package = pkgs.fabricServers.fabric-1_21_11;
+          package = pkgs.neoforgeServers.neoforge-1_21_11;
 
           serverProperties = {};
 
           symlinks = {
-            "mods" = ../../modsList;
+            "mods" = "${modpack}/mods";
+          };
+          files = {
+            "config" = "${modpack}/config";
           };
         };
       };
