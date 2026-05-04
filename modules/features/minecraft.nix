@@ -13,14 +13,16 @@
       enable = true;
       eula = true;
       openFirewall = true;
-      managementSystem.systemd-socket.enable = true;
+      # managementSystem.systemd-socket.enable = true;
       
       servers = {
         modded = {
           enable = true;
           package = pkgs.neoforgeServers.neoforge-1_21_1;
 
-          serverProperties = {};
+          serverProperties = {
+            server-port = 25565;
+          };
 
           symlinks = {
             "mods" = "${modpack}/mods";
@@ -28,9 +30,18 @@
           operators = {
             KaceyXamComics = "98026ffc-e6de-4ad1-914d-26fcdfbf1a88";
           };
-          # files = {
-          #   "config" = "${modpack}/config";
-          # };
+        };
+        vanilla = {
+          enable = true;
+          package = pkgs.paperServers.paper-1_21_11;
+          autoStart = false;
+
+          serverProperties = {
+            server-port = 25566;
+          };
+          operators = {
+            KaceyXamComics = "98026ffc-e6de-4ad1-914d-26fcdfbf1a88";
+          };
         };
       };
     };
