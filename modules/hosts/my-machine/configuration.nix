@@ -20,6 +20,10 @@
 
     services.tuned.enable = true;
     services.upower.enable = true;
+
+    services.openssh = {
+      enable = true;
+    };
   
     time.timeZone = "America/Chicago";
 
