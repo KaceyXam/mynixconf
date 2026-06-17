@@ -57,6 +57,8 @@ set $lock swaylock
 # # Drawing monitor
 # output HDMI-A-1 resolution 1920x1080 position 6400,360
 
+output eDP-1 scale 1.6
+
 
 output * bg ~/Wallpapers/mountain-night-wallpaper.jpg fill
 
