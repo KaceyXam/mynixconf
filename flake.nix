@@ -4,21 +4,33 @@
 
     home-manager = {
       url = "github:nix-community/home-manager";
-    };
-
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
-
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    import-tree.url = "github:vic/import-tree";
-
-    wrappers.url = "github:Lassulus/wrappers";
-    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
-
-    mangowm = {
-      url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs; } (inputs.import-tree ./modules);
+  outputs = { nixpkgs, home-manager, ... }:
+  let
+    system = "x86_64-linux";
+  in {
+    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+      inherit system;
+
+      modules = [
+        ./hosts/laptop/config.nix
+
+        home-manager.nixosModules.home-manager
+
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            overwriteBackup = true;
+            backupFileExtension = "bak";
+            
+            users.kxkniffen = import ./home.nix;
+          };
+        }
+      ];
+    };
+  };
 }
