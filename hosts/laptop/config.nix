@@ -2,7 +2,13 @@
   imports = [
     ./hardware.nix
     ../../modules/gaming.nix
+    ../../modules/wm.nix
+    ../../modules/drawing.nix
   ];
+
+  myModules.wm.swayfx.enable = true;
+  myModules.drawing.enable = true;
+  myModules.gaming.enable = true;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -35,11 +41,6 @@
   services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm.enable = true;
 
-  hardware.opentabletdriver.enable = true;
-
-  hardware.uinput.enable = true;
-  boot.kernelModules = [ "uinput" ];
-
   nixpkgs.config.allowUnfree = true;
 
   nixpkgs.config.qt5 = {
@@ -49,19 +50,12 @@
 
   environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
 
-  myModules.gaming.enable = true;
   
   users.users.kxkniffen = {
     isNormalUser = true;
     description = "Kacey Kniffen";
     extraGroups = [ "networkmanager" "wheel" ];
   };
-
-  programs.sway = {
-    enable = true;
-    package = pkgs.swayfx;
-  };
-  programs.gtklock.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 

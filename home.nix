@@ -64,11 +64,5 @@
     nerd-fonts.jetbrains-mono
   ];
 
-  xdg.configFile."sway".source = ./dotfiles/sway;
-  xdg.configFile."waybar".source = ./dotfiles/waybar;
-  xdg.configFile."mako".source = ./dotfiles/mako;
-  xdg.configFile."fuzzel".source = ./dotfiles/fuzzel;
-  xdg.configFile."gtklock".source = ./dotfiles/gtklock;
-
   programs.git.enable = true;
 }
