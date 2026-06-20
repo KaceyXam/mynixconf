@@ -2,9 +2,16 @@
 let
   cfg = config.myModules.wm;
   dotfiles = ../dotfiles;
+  username = "kxkniffen";
 in {
   options.myModules.wm = {
-    swayfx.enable = lib.mkEnableOption "Enable SwayFX Desktop Environment";
+    swayfx = {
+      enable = lib.mkEnableOption "Enable SwayFX Desktop Environment";
+      monitorConfig = lib.mkOption {
+        type = lib.types.path;
+        description = "Path to host-specific monitor settings";
+      };
+    };
   };
 
   config = lib.mkIf cfg.swayfx.enable {
@@ -18,13 +25,20 @@ in {
       waybar
       mako
       fuzzel
+      autotiling
     ];
 
-    environment.etc = {
-      "xdg/waybar".source = "${dotfiles}/waybar";
-      "xdg/mako".source = "${dotfiles}/mako";
-      "xdg/fuzzel".source = "${dotfiles}/fuzzel";
-      "xdg/sway".source = "${dotfiles}/sway";
+    home-manager.users.${username} = {
+      xdg.configFile = {
+        "waybar".source = "${dotfiles}/waybar";
+        "mako".source = "${dotfiles}/mako";
+        "fuzzel".source = "${dotfiles}/fuzzel";
+        "gtklock".source = "${dotfiles}/gtklock";
+        "sway".source = "${dotfiles}/sway";
+        "sway-monitors.conf".source = cfg.swayfx.monitorConfig;
+      };
+
+      home.stateVersion = "24.11";
     };
   };
 }

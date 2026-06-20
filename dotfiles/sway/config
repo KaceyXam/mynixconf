@@ -37,6 +37,8 @@ set $term alacritty
 set $menu fuzzel
 set $lock gtklock
 
+include ~/.config/sway-monitors.conf
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
@@ -56,9 +58,6 @@ set $lock gtklock
 
 # # Drawing monitor
 # output HDMI-A-1 resolution 1920x1080 position 6400,360
-
-output eDP-1 scale 1.6
-
 
 output * bg ~/Wallpapers/mountain-night-wallpaper.jpg fill
 

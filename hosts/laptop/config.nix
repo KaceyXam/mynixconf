@@ -6,7 +6,10 @@
     ../../modules/drawing.nix
   ];
 
-  myModules.wm.swayfx.enable = true;
+  myModules.wm.swayfx = {
+    enable = true;
+    monitorConfig = ./monitors.conf;
+  };
   myModules.drawing.enable = true;
   myModules.gaming.enable = true;
 
