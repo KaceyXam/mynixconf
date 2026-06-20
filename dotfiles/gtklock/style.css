@@ -1,0 +1,19 @@
+* {
+  font-family: "JetBrainsMono NF";
+  color: white;
+  text-shadow: 1px 1px 3px black;
+}
+
+window {
+  background-image: url("/home/kxkniffen/Wallpapers/mountain-night-wallpaper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#input-field {
+  font-size: 1.25rem;
+  border-radius: 0.75rem;
+  background-color: rgba(40, 40, 40, 0.6);
+  text-shadow: none;
+}
