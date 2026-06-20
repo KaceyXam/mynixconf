@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
   imports = [
     ./hardware.nix
+    ../../modules/gaming.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -47,6 +48,8 @@
   };
 
   environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
+
+  myModules.gaming.enable = true;
   
   users.users.kxkniffen = {
     isNormalUser = true;
