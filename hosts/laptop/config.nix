@@ -1,9 +1,7 @@
 { config, pkgs, ... }: {
   imports = [
     ./hardware.nix
-    ../../modules/gaming.nix
-    ../../modules/wm.nix
-    ../../modules/drawing.nix
+    ../../modules
   ];
 
   myModules.wm.swayfx = {
@@ -11,7 +9,6 @@
     monitorConfig = ./monitors.conf;
   };
   myModules.drawing.enable = true;
-  myModules.gaming.enable = true;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
