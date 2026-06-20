@@ -27,7 +27,6 @@
 
     libnotify
 
-    gtklock
     waybar
     mako
     fuzzel
