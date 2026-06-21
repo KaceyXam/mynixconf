@@ -28,7 +28,7 @@
     zip
     unzip
 
-    kdePackages.breeze
+    qt6Packages.qt6ct
   ];
 
   fonts.packages = with pkgs; [
@@ -46,8 +46,10 @@
     nerd-fonts.jetbrains-mono
   ];
 
-  environment.sessionVariables = {
-    QT_STYLE_OVERRIDE = "breeze";
+  qt = {
+    enable = true;
+    platformTheme = "qt5ct";
+    style = "breeze";
   };
 
   programs.git.enable = true;
