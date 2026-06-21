@@ -27,6 +27,8 @@
 
     zip
     unzip
+
+    kdePackages.breeze
   ];
 
   fonts.packages = with pkgs; [
@@ -44,6 +46,10 @@
     nerd-fonts.jetbrains-mono
   ];
 
+  environment.sessionVariables = {
+    QT_STYLE_OVERRIDE = "breeze";
+  };
+
   programs.git.enable = true;
-  services.displayManager.sddm.enable = true;
+  services.displayManager.gdm.enable = true;
 }
