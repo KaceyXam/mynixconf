@@ -52,6 +52,15 @@
     style = "breeze";
   };
 
+  home-manager.users.kxkniffen = {
+    home.pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 24;
+    };
+  };
+
   programs.git.enable = true;
   services.displayManager.gdm.enable = true;
 }
