@@ -1,7 +1,7 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
   imports = [
-    ./hardware.nix
     ../../modules
+    ./applications.nix
   ];
 
   myModules.wm.swayfx = {
@@ -9,11 +9,9 @@
     monitorConfig = ./monitors.conf;
   };
   myModules.drawing.enable = true;
+  myModules.gaming.enable = true;
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "kacey-laptop"; # Define your hostname.
+  networking.hostName = "kacey-desktop";
 
   networking.networkmanager.enable = true;
 
@@ -35,10 +33,6 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-
-  services.xserver.enable = true;
-
-  services.desktopManager.gnome.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 

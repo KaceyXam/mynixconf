@@ -20,16 +20,19 @@
 
         home-manager.nixosModules.home-manager
 
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            overwriteBackup = true;
-            backupFileExtension = "bak";
-            
-            users.kxkniffen = import ./home.nix;
-          };
-        }
+        ./home.nix
+      ];
+    };
+
+    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+      inherit system;
+
+      modules = [
+        ./hosts/desktop/config.nix
+
+        home-manager.nixosModules.home-manager
+
+        ./home.nix
       ];
     };
   };
