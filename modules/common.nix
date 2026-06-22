@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+let
+  dotfiles = ../dotfiles;
+  username = "kxkniffen";
+in {
   environment.systemPackages = with pkgs; [
     firefox
     novelwriter
@@ -52,12 +56,16 @@
     style = "breeze";
   };
 
-  home-manager.users.kxkniffen = {
+  home-manager.users.${username} = {
     home.pointerCursor = {
       gtk.enable = true;
       package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
+      name = "Bibata-Original-Classic";
       size = 24;
+    };
+
+    xdg.configFile = {
+      "helix".source = "${dotfiles}/helix";
     };
   };
 
