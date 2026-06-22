@@ -44,7 +44,7 @@ exec_always {
     gsettings set $gnome-schema font-name 'Noto Sans'
 }
 
-seat seat0 xcursor_theme "Bibata-Original-Classic" 24
+seat seat0 xcursor_theme "Bibata-Modern-Classic" 24
 
 ### Idle configuration
 #

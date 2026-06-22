@@ -60,7 +60,7 @@ in {
     home.pointerCursor = {
       gtk.enable = true;
       package = pkgs.bibata-cursors;
-      name = "Bibata-Original-Classic";
+      name = "Bibata-Modern-Classic";
       size = 24;
     };
 
