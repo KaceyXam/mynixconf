@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+let
+  dotfiles = ../dotfiles;
+  username = "kxkniffen";
+in {
   environment.systemPackages = with pkgs; [
     firefox
     novelwriter
@@ -27,6 +31,8 @@
 
     zip
     unzip
+
+    qt6Packages.qt6ct
   ];
 
   fonts.packages = with pkgs; [
@@ -44,6 +50,31 @@
     nerd-fonts.jetbrains-mono
   ];
 
+  programs.zsh = {
+    enable = true;
+  };
+  users.defaultUserShell = pkgs.zsh;
+
+  qt = {
+    enable = true;
+    platformTheme = "qt5ct";
+    style = "breeze";
+  };
+
+  home-manager.users.${username} = {
+    home.pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 24;
+    };
+
+    xdg.configFile = {
+      "helix".source = "${dotfiles}/helix";
+      "alacritty".source = "${dotfiles}/alacritty";
+    };
+  };
+
   programs.git.enable = true;
-  services.displayManager.sddm.enable = true;
+  services.displayManager.gdm.enable = true;
 }
