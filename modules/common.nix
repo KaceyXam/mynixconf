@@ -66,6 +66,7 @@ in {
 
     xdg.configFile = {
       "helix".source = "${dotfiles}/helix";
+      "alacritty".source = "${dotfiles}/alacritty";
     };
   };
 
