@@ -19,6 +19,24 @@ in {
       home.sessionVariables = qtEnv;
       systemd.user.sessionVariables = qtEnv;
 
+      programs.zsh = {
+        enable = true;
+        enableCompletion = true;
+        autosuggestion.enable = true;
+        syntaxHighlighting.enable = true;
+
+        shellAliases = {
+          ll = "ls -la";
+          update = "sudo nixos-rebuild switch";
+        };
+
+        history = {
+          size = 10000;
+          path = "$HOME/.zsh_history";
+          ignoreAllDups = true;
+        };
+      };
+
       programs.starship = {
         enable = true;
         settings = {
