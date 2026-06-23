@@ -50,6 +50,29 @@ in {
     nerd-fonts.jetbrains-mono
   ];
 
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      ll = "ls -la";
+      update = "sudo nixos-rebuild switch";
+    };
+
+    shellInit = ''
+      eval "$(starship init zsh)"
+    '';
+
+    histSize = 10000;
+    histFile = "$HOME/.zsh_history";
+    setOptions = [
+      "HIST_IGNORE_ALL_DUPS"
+    ];
+  };
+  users.defaultUserShell = pkgs.zsh;
+
   qt = {
     enable = true;
     platformTheme = "qt5ct";
