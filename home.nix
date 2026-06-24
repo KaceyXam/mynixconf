@@ -1,4 +1,4 @@
-{ ... }:
+{ config, pkgs, ... }:
 let
   qtEnv = {
     QT_QPA_PLATFORMTHEME = "qt5ct";
@@ -34,6 +34,18 @@ in {
           size = 10000;
           path = "$HOME/.zsh_history";
           ignoreAllDups = true;
+        };
+      };
+
+      gtk = {
+        enable = true;
+        theme = {
+          name = "Adwaita-dark";
+          package = pkgs.gnome-themes-extra;
+        };
+        iconTheme = {
+          name = "Adwaita";
+          package = pkgs.adwaita-icon-theme;
         };
       };
 

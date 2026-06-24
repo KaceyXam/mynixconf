@@ -10,8 +10,6 @@ in {
     tidal-hifi
     pavucontrol
 
-    adwaita-icon-theme
-
     git
     helix
     ripgrep
@@ -62,10 +60,6 @@ in {
     enable = true;
     platformTheme = "qt5ct";
     style = "breeze";
-  };
-
-  environment.sessionVariables = {
-    GTK_THEME = "Adwaita:dark";
   };
 
   home-manager.users.${username} = {
