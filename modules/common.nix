@@ -76,5 +76,6 @@ in {
   };
 
   programs.git.enable = true;
-  services.displayManager.gdm.enable = true;
+  services.xserver.enable = true;
+  services.displayManager.sddm.enable = true;
 }
