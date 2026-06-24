@@ -2,6 +2,7 @@
   imports = [
     ../../modules
     ./applications.nix
+    ./hardware.nix
   ];
 
   myModules.wm.swayfx = {
@@ -10,6 +11,9 @@
   };
   myModules.drawing.enable = true;
   myModules.gaming.enable = true;
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "kacey-desktop";
 
@@ -33,6 +37,8 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+
+  services.xserver.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
