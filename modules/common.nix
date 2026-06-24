@@ -7,7 +7,7 @@ in {
     firefox
     novelwriter
     obsidian
-    tidal-hifi
+    sone
     pavucontrol
 
     git
