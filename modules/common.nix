@@ -8,6 +8,7 @@ in {
     novelwriter
     obsidian
     tidal-hifi
+    pavucontrol
 
     git
     helix
