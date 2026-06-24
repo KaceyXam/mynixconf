@@ -31,7 +31,7 @@ set $up k
 set $right l
 set $term alacritty
 set $menu fuzzel
-set $lock gtklock
+set $lock gtklock -d
 
 include ~/.config/sway-monitors.conf
 
