@@ -34,7 +34,17 @@ in {
     unzip
 
     qt6Packages.qt6ct
+
+    thunar
+    imv
+    xarchiver
+    zathura
+    grim
+    slurp
+    cliphist
   ];
+
+  services.gvfs.enable = true;
 
   fonts.packages = with pkgs; [
     ubuntu-sans
