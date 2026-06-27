@@ -26,6 +26,7 @@ in {
       mako
       fuzzel
       autotiling
+      swaylock-effects
     ];
 
     home-manager.users.${username} = {
@@ -33,8 +34,8 @@ in {
         "waybar".source = "${dotfiles}/waybar";
         "mako".source = "${dotfiles}/mako";
         "fuzzel".source = "${dotfiles}/fuzzel";
-        "gtklock".source = "${dotfiles}/gtklock";
         "sway".source = "${dotfiles}/sway";
+        "swaylock".source = "${dotfiles}/swaylock";
         "sway-monitors.conf".source = cfg.swayfx.monitorConfig;
       };
 

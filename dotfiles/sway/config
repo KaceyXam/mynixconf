@@ -31,7 +31,7 @@ set $up k
 set $right l
 set $term alacritty
 set $menu fuzzel
-set $lock pidof gtklock || gtklock -d
+set $lock pidof swaylock || swaylock
 
 include ~/.config/sway-monitors.conf
 
@@ -51,9 +51,9 @@ seat seat0 xcursor_theme "Bibata-Modern-Classic" 24
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 1200 'pidof gtklock || gtklock -d' \
+         timeout 1200 'pidof swaylock || swaylock' \
          timeout 1500 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'pidof gtklock || gtklock -d'
+         before-sleep 'pidof swaylock || swaylock -d'
 
 # This will lock your screen after 1200 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
