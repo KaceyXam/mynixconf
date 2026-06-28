@@ -1,53 +1,43 @@
 clock
 indicator
-screenshots
+image=~/Wallpapers/mountain-night-wallpaper.jpg
 effect-blur=7x5
 effect-vignette=0.5:0.5
-fade-in=0.2
 
-color=181820
+# color=1F1F28
 
-indicator-radius=110
+indicator-radius=150
 indicator-thickness=10
-indicator-caps-fraction=0.1
 
-# Ring colors by state
-ring-color=2A2A37
+ring-color=545464
 ring-clear-color=98BB6C
-ring-ver-color=FF9E3B
+ring-ver-color=E6C384
 ring-wrong-color=E82424
 
-# Inner circle (the disc within the ring)
-inside-color=1F1F28
-inside-clear-color=1F1F28
-inside-ver-color=1F1F28
-inside-wrong-color=1F1F28
+inside-color=1F1F28DD
+inside-clear-color=2A2A37DD
+inside-ver-color=2A2A37DD
+inside-wrong-color=2A2A37DD
 
-# Line dividing ring segments (matches background)
+text-color=DCD7BA
+text-clear-color=98BB6C
+text-ver-color=E6C384
+text-wrong-color=E82424
+
 line-color=00000000
 line-clear-color=00000000
 line-ver-color=00000000
 line-wrong-color=00000000
 
-# Text
-text-color=DCD7BA
-text-clear-color=98BB6C
-text-ver-color=FF9E3B
-text-wrong-color=E82424
-
-# Key press highlight segments
 key-hl-color=7E9CD8
 bs-hl-color=E82424
-caps-lock-key-hl-color=FF9E3B
+caps-lock-key-hl-color=E6C384
 caps-lock-bs-hl-color=E82424
 
-# Layout text
 layout-bg-color=1F1F28
 layout-text-color=DCD7BA
 
-# Clock
-font=monospace
-font-size=32
-clock-font-size=64
-timestr=%H:%M
+font=JetBrainsMono NF
+font-size=48
+timestr=%H:%M:%S
 datestr=%A, %B %d
