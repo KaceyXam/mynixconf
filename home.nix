@@ -50,6 +50,13 @@ in {
         gtk4.theme = null;
       };
 
+      dconf.settings = {
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+          gtk-theme = "Adwaita-dark";
+        };
+      };
+
       programs.starship = {
         enable = true;
         settings = {

@@ -98,6 +98,7 @@ in
     };
   };
 
+  programs.dconf.enable = true;
   programs.git.enable = true;
   services.xserver.enable = true;
   services.displayManager.sddm = {
