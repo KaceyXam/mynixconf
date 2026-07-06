@@ -3,6 +3,24 @@ let
   cfg = config.myModules.wm;
   dotfiles = ../dotfiles;
   username = "kxkniffen";
+
+  powermenu = pkgs.writeShellApplication {
+    name = "powermenu";
+    runtimeInputs = with pkgs; [ fuzzel sway ];
+    text = ''
+      entries="Lock\nLogout\nSuspend\nReboot\nShutdown"
+
+      selected=$(echo -e "$entries" | fuzzel --dmenu --prompt "Power: ")
+
+      case "$selected" in
+        Lock) swaylock ;;
+        Logout) swaymsg exit ;;
+        Suspend) systemctl suspend ;;
+        Reboot) systemctl reboot ;;
+        Shutdown) systemctl poweroff ;;
+      esac
+    '';
+  };
 in {
   options.myModules.wm = {
     swayfx = {
@@ -27,6 +45,7 @@ in {
       fuzzel
       autotiling
       swaylock-effects
+      powermenu
     ];
 
     home-manager.users.${username} = {
