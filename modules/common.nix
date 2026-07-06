@@ -2,7 +2,8 @@
 let
   dotfiles = ../dotfiles;
   username = "kxkniffen";
-in {
+in
+{
   environment.systemPackages = with pkgs; [
     firefox
     novelwriter
@@ -12,6 +13,10 @@ in {
 
     git
     helix
+
+    nixd
+    nixfmt
+
     ripgrep
     vlc
 
@@ -24,7 +29,7 @@ in {
     alacritty
 
     libnotify
-    
+
     networkmanagerapplet
 
     brightnessctl
@@ -42,6 +47,13 @@ in {
     grim
     slurp
     cliphist
+
+    (catppuccin-sddm.override {
+      flavor = "mocha";
+      accent = "sapphire";
+      font = "JetBrainsMono NF";
+      fontSize = "12";
+    })
   ];
 
   services.gvfs.enable = true;
@@ -88,5 +100,9 @@ in {
 
   programs.git.enable = true;
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    theme = "catppuccin-mocha-sapphire";
+    package = pkgs.kdePackages.sddm;
+  };
 }
