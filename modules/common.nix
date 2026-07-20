@@ -44,9 +44,9 @@ in
     imv
     xarchiver
     zathura
-    grim
-    slurp
     cliphist
+
+    kdePackages.kdenlive
 
     (catppuccin-sddm.override {
       flavor = "mocha";
@@ -86,6 +86,7 @@ in
 
   home-manager.users.${username} = {
     home.pointerCursor = {
+      enable = true;
       gtk.enable = true;
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
