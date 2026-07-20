@@ -46,6 +46,10 @@ in {
       autotiling
       swaylock-effects
       powermenu
+
+      grim
+      slurp
+      sway-contrib.grimshot
     ];
 
     home-manager.users.${username} = {

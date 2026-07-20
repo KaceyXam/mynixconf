@@ -100,8 +100,8 @@ exec nm-applet --indicator
     bindsym $mod+Shift+c reload
 
     bindsym $mod+Shift+l exec $lock
-    bindsym $mod+Print exec sway-screenshot -m window
-    bindsym $mod+Shift+Print exec sway-screenshot -m region
+    bindsym $mod+Print exec grimshot save screen ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
+    bindsym $mod+Shift+Print exec grimshot save area ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
 
 
     # Exit sway (logs you out of your Wayland session)
