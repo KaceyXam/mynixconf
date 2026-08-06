@@ -47,6 +47,8 @@ in
     cliphist
 
     kdePackages.kdenlive
+    kdePackages.breeze
+    audacity
 
     (catppuccin-sddm.override {
       flavor = "mocha";
@@ -81,7 +83,6 @@ in
   qt = {
     enable = true;
     platformTheme = "qt5ct";
-    style = "breeze";
   };
 
   home-manager.users.${username} = {
