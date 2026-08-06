@@ -108,4 +108,6 @@ in
     theme = "catppuccin-mocha-sapphire";
     package = pkgs.kdePackages.sddm;
   };
+
+  boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
 }
