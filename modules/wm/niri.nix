@@ -65,6 +65,8 @@ in {
       swaylock-effects
       powermenu
       awww
+      application-switcher
+      xwayland-satellite
     ];
     
     home-manager.users.${username} = {
