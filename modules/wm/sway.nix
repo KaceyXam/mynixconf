@@ -1,11 +1,11 @@
 { config, lib, pkgs, ... }:
 let
   cfg = config.myModules.wm;
-  dotfiles = ../dotfiles;
+  dotfiles = ../../dotfiles;
   username = "kxkniffen";
 
   powermenu = pkgs.writeShellApplication {
-    name = "powermenu";
+    name = "powermenu-sway";
     runtimeInputs = with pkgs; [ fuzzel sway ];
     text = ''
       entries="Lock\nLogout\nSuspend\nReboot\nShutdown"
@@ -37,7 +37,6 @@ in {
       enable = true;
       package = pkgs.swayfx;
     };
-    programs.gtklock.enable = true;
     
     environment.systemPackages = with pkgs; [
       waybar
@@ -54,7 +53,8 @@ in {
 
     home-manager.users.${username} = {
       xdg.configFile = {
-        "waybar".source = "${dotfiles}/waybar";
+        "waybar/config-sway.jsonc".source = "${dotfiles}/waybar/config-sway.jsonc";
+        "waybar/style.css".source = "${dotfiles}/waybar/style.css";
         "mako".source = "${dotfiles}/mako";
         "fuzzel".source = "${dotfiles}/fuzzel";
         "sway".source = "${dotfiles}/sway";

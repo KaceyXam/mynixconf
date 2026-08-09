@@ -9,6 +9,10 @@
     enable = true;
     monitorConfig = ./monitors.conf;
   };
+  myModules.wm.niri = {
+    enable = true;
+    monitorConfig = ./monitors.kdl;
+  };
   myModules.drawing.enable = true;
   myModules.gaming.enable = true;
 
