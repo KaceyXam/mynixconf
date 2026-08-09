@@ -2,6 +2,8 @@
 let
   qtEnv = {
     QT_QPA_PLATFORMTHEME = "qt5ct";
+    QT_QPA_PLATFORM = "wayland";
+    NIXOS_OZONE_WL = "1";
   };
 in {
   home-manager = {

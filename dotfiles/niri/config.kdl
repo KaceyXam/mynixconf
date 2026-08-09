@@ -1,4 +1,4 @@
-include ./monitors.kdl
+include "monitors.kdl"
 
 input {
     keyboard {
@@ -292,8 +292,8 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+Shift+E { powermenu-niri; }
-    Ctrl+Alt+Delete { powermenu-niri; }
+    Mod+Shift+E { exec-sh powermenu-niri; }
+    Ctrl+Alt+Delete { exec-sh powermenu-niri; }
 
     Mod+Shift+P { power-off-monitors; }
 }
