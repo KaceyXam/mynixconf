@@ -1,9 +1,5 @@
 include "monitors.kdl"
 
-debug {
-    force-disable-connectors-on-resume
-}
-
 input {
     keyboard {
         numlock
@@ -113,6 +109,7 @@ window-rule {
     match app-id="org.kde.kdenlive"
     match app-id="krita"
     match app-id="sone"
+    match app-id="Minecraft"
 
     default-column-width { proportion 1.0; }
 }
@@ -146,7 +143,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+Shift+Space hotkey-overlay-title="Switch to Running Application: fuzzel" { spawn-sh "/home/kxkniffen/.config/niri/application-switcher.sh"; }
-    Super+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Super+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" allow-when-locked=true { spawn "swaylock"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
