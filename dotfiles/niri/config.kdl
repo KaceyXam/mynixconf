@@ -1,5 +1,9 @@
 include "monitors.kdl"
 
+debug {
+    force-disable-connectors-on-resume
+}
+
 input {
     keyboard {
         numlock
