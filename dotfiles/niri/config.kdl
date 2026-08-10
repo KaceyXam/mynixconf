@@ -142,7 +142,7 @@ binds {
 
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+Shift+Space hotkey-overlay-title="Switch to Running Application: fuzzel" { spawn-sh "/home/kxkniffen/.config/niri/application-switcher.sh"; }
+    Mod+Shift+Space hotkey-overlay-title="Switch to Running Application: fuzzel" { spawn-sh "application-switcher"; }
     Super+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" allow-when-locked=true { spawn "swaylock"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
