@@ -8,6 +8,10 @@
     enable = true;
     monitorConfig = ./monitors.conf;
   };
+  myModules.wm.niri = {
+    enable = true;
+    monitorConfig = ./monitors.kdl;
+  };
   myModules.drawing.enable = true;
 
   boot.loader.systemd-boot.enable = true;
