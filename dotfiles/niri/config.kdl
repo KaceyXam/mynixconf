@@ -80,6 +80,7 @@ spawn-at-startup "awww" "img" "/home/kxkniffen/Wallpapers/mountain-night-wallpap
 spawn-at-startup "awww" "img" "/home/kxkniffen/Wallpapers/mountain-night-wallpaper-blurred.jpg" "--namespace" "overlay"
 
 spawn-at-startup "sone"
+spawn-at-startup "discordcanary"
 
 hotkey-overlay {
     skip-at-startup
@@ -110,7 +111,6 @@ window-rule {
 
 
 window-rule {
-    match app-id="org.kde.kdenlive"
     match app-id="krita"
     match app-id="sone"
     match app-id="Minecraft"
