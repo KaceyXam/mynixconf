@@ -11,3 +11,8 @@ output "DP-3" {
     mode "1920x1080"
     position x=4480 y=360
 }
+
+output "HDMI-A-1" {
+    mode "1920x1080"
+    position x=6400 y=360
+}

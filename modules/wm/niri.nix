@@ -67,6 +67,7 @@ in {
       awww
       application-switcher
       xwayland-satellite
+      kanshi
     ];
     
     home-manager.users.${username} = {
@@ -78,6 +79,7 @@ in {
         "mako".source = "${dotfiles}/mako";
         "fuzzel".source = "${dotfiles}/fuzzel";
         "swaylock".source = "${dotfiles}/swaylock";
+        "kanshi/config".source = "${dotfiles}/kanshi/config";
       };
 
       home.stateVersion = "24.11";
