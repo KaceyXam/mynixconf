@@ -112,7 +112,6 @@ window-rule {
 
 
 window-rule {
-    match app-id="krita"
     match app-id="sone"
     match app-id="Minecraft"
 
