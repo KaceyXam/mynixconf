@@ -1,5 +1,8 @@
-profile tablet-connected {
-    output "HDMI-A-2" enable
-    exec awww img /home/kxkniffen/Wallpapers/mountain-night-wallpaper.jpg --outputs "HDMI-A-2"
-    exec awww img /home/kxkniffen/Wallpapers/mountain-night-wallpaper-blurred.jpg --namespace overlay --outputs "HDMI-A-2"
+profile {
+    output DP-1 enable
+    output DP-2 enable
+    output DP-3 enable
+    output HDMI-A-1 enable
+    exec awww img /home/kxkniffen/Wallpapers/mountain-night-wallpaper.jpg --outputs "HDMI-A-1"
+    exec awww img /home/kxkniffen/Wallpapers/mountain-night-wallpaper-blurred.jpg --namespace overlay --outputs "HDMI-A-1"
 }

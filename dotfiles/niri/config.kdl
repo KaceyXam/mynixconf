@@ -75,6 +75,7 @@ spawn-at-startup "waybar" "-c" "/home/kxkniffen/.config/waybar/config-niri.jsonc
 spawn-at-startup "mako"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "awww-daemon" "--namespace" "overlay"
+spawn-at-startup "kanshi"
 
 spawn-at-startup "awww" "img" "/home/kxkniffen/Wallpapers/mountain-night-wallpaper.jpg"
 spawn-at-startup "awww" "img" "/home/kxkniffen/Wallpapers/mountain-night-wallpaper-blurred.jpg" "--namespace" "overlay"
