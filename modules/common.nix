@@ -58,6 +58,11 @@ in
     })
   ];
 
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs; [ thunar-archive-plugin thunar-volman ];
+  };
+  services.tumbler.enable = true;
   services.gvfs.enable = true;
 
   fonts.packages = with pkgs; [
@@ -74,6 +79,7 @@ in
 
     nerd-fonts.jetbrains-mono
   ];
+
 
   programs.zsh = {
     enable = true;
