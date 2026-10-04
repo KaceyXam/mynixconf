@@ -77,8 +77,8 @@ spawn-at-startup "awww-daemon"
 spawn-at-startup "awww-daemon" "--namespace" "overlay"
 spawn-at-startup "kanshi"
 
-spawn-at-startup "awww" "img" "/home/kxkniffen/Wallpapers/mountain-night-wallpaper.jpg"
-spawn-at-startup "awww" "img" "/home/kxkniffen/Wallpapers/mountain-night-wallpaper-blurred.jpg" "--namespace" "overlay"
+spawn-at-startup "awww" "img" "/home/kxkniffen/Wallpapers/mountain-night-wallpaper_scaled.jpg"
+spawn-at-startup "awww" "img" "/home/kxkniffen/Wallpapers/mountain-night-wallpaper-blurred_scaled.jpg" "--namespace" "overlay"
 
 spawn-at-startup "sone"
 spawn-at-startup "discordcanary"
