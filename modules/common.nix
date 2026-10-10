@@ -56,7 +56,14 @@ in
       font = "JetBrainsMono NF";
       fontSize = "12";
     })
+
+    emacs-pgtk
   ];
+
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacs-pgtk;
+  };
 
   programs.thunar = {
     enable = true;
