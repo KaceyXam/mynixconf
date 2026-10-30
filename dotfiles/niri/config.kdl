@@ -81,7 +81,7 @@ spawn-at-startup "awww" "img" "/home/kxkniffen/Wallpapers/mountain-night-wallpap
 spawn-at-startup "awww" "img" "/home/kxkniffen/Wallpapers/mountain-night-wallpaper-blurred_scaled.jpg" "--namespace" "overlay"
 
 spawn-at-startup "sone"
-spawn-at-startup "discordcanary"
+spawn-at-startup "legcord"
 
 hotkey-overlay {
     skip-at-startup
@@ -137,7 +137,7 @@ workspace "discord" {
 }
 
 window-rule {
-    match at-startup=true app-id="discord"
+    match at-startup=true app-id="legcord"
     open-on-workspace "discord"
 }
 
