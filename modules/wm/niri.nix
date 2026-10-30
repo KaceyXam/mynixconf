@@ -58,6 +58,8 @@ in {
       enable = true;
     };
 
+    programs.dux-shell.enable = true;
+
     environment.systemPackages = with pkgs; [
       waybar
       mako
