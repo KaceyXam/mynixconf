@@ -71,14 +71,16 @@ gestures {
     }
 }
 
-spawn-at-startup "waybar" "-c" "/home/kxkniffen/.config/waybar/config-niri.jsonc" "-s" "/home/kxkniffen/.config/waybar/style.css"
-spawn-at-startup "mako"
-spawn-at-startup "awww-daemon"
-spawn-at-startup "awww-daemon" "--namespace" "overlay"
-spawn-at-startup "kanshi"
+// spawn-at-startup "waybar" "-c" "/home/kxkniffen/.config/waybar/config-niri.jsonc" "-s" "/home/kxkniffen/.config/waybar/style.css"
+// spawn-at-startup "mako"
+// spawn-at-startup "awww-daemon"
+// spawn-at-startup "awww-daemon" "--namespace" "overlay"
+// spawn-at-startup "kanshi"
 
-spawn-at-startup "awww" "img" "/home/kxkniffen/Wallpapers/mountain-night-wallpaper_scaled.jpg"
-spawn-at-startup "awww" "img" "/home/kxkniffen/Wallpapers/mountain-night-wallpaper-blurred_scaled.jpg" "--namespace" "overlay"
+// spawn-at-startup "awww" "img" "/home/kxkniffen/Wallpapers/mountain-night-wallpaper_scaled.jpg"
+// spawn-at-startup "awww" "img" "/home/kxkniffen/Wallpapers/mountain-night-wallpaper-blurred_scaled.jpg" "--namespace" "overlay"
+
+spawn-at-startup "noctalia"
 
 spawn-at-startup "sone"
 spawn-at-startup "legcord"
@@ -119,8 +121,15 @@ window-rule {
 }
 
 layer-rule {
-    match namespace="overlay"
+    match namespace="^noctalia-backdrop"
     place-within-backdrop true
+}
+
+window-rule {
+  match app-id="dev.noctalia.Noctalia"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
 }
 
 workspace "music" {
@@ -145,9 +154,9 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+Shift+Space hotkey-overlay-title="Switch to Running Application: fuzzel" { spawn-sh "application-switcher"; }
-    Super+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" allow-when-locked=true { spawn "swaylock"; }
+    Mod+Space hotkey-overlay-title="Run an Application: Noctalia" { spawn-sh "noctalia msg panel-toggle launcher"; }
+    // Mod+Shift+Space hotkey-overlay-title="Switch to Running Application: fuzzel" { spawn-sh "application-switcher"; }
+    Super+Shift+L hotkey-overlay-title="Lock the Screen: swaylock" allow-when-locked=true { spawn-sh "noctalia msg session lock"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -297,8 +306,8 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+Shift+E { spawn-sh "powermenu-niri"; }
-    Ctrl+Alt+Delete { spawn-sh "powermenu-niri"; }
+    Mod+Shift+E { spawn-sh "noctalia msg panel-toggle session"; }
+    Ctrl+Alt+Delete { spawn-sh "noctalia msg panel-toggle session"; }
 
     Mod+Shift+P { power-off-monitors; }
 }
