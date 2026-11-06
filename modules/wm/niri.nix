@@ -1,5 +1,5 @@
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 let
   cfg = config.myModules.wm;
   dotfiles = ../../dotfiles;
@@ -58,10 +58,6 @@ in {
       enable = true;
     };
 
-    programs.noctalia = {
-      enable = true;
-    };
-
     environment.systemPackages = with pkgs; [
       # waybar
       # mako
@@ -75,6 +71,8 @@ in {
     ];
     
     home-manager.users.${username} = {
+      imports = [ inputs.noctalia.homeModules.default ];
+      
       xdg.configFile = {
         # "waybar/config-niri.jsonc".source = "${dotfiles}/waybar/config-niri.jsonc";
         # "waybar/style.css".source = "${dotfiles}/waybar/style.css";
@@ -84,6 +82,11 @@ in {
         # "fuzzel".source = "${dotfiles}/fuzzel";
         "swaylock".source = "${dotfiles}/swaylock";
         # "kanshi/config".source = "${dotfiles}/kanshi/config";
+      };
+
+      programs.noctalia = {
+        enable = true;
+        settings = ../../dotfiles/noctalia/noctalia-config.toml;
       };
 
       home.stateVersion = "24.11";

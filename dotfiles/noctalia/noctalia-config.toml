@@ -1,0 +1,202 @@
+[backdrop]
+enabled = true
+
+[bar.default]
+center = [ "active_window" ]
+compositor_blur = false
+concave_edge_corners = false
+end = [
+    "media",
+    "network",
+    "bluetooth",
+    "volume",
+    "brightness",
+    "battery",
+    "tray",
+    "notifications",
+    "control-center",
+    "clock",
+    "session"
+]
+margin_ends = 0
+radius = 0
+start = [ "launcher", "workspaces" ]
+widget_spacing = 12
+
+[location]
+address = "OLATHE, KS"
+
+[lockscreen]
+edge_smoothness = 0.0
+transition = [ "honeycomb" ]
+transition_duration = 500
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@DP-2",
+    "lockscreen-login-box@DP-3",
+    "lockscreen-login-box@DP-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1258.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "DP-2"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-2".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-3"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "DP-3"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-3".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 224.0
+    box_width = 576.0
+    cx = 1280.0
+    cy = 320.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        background_opacity = 0.70000000000000007
+        background_padding = 0
+        clock_style = "digital"
+        shadow = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 80.0
+    box_width = 688.0
+    cx = 1280.0
+    cy = 1040.0
+    output = "DP-1"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "weather"
+
+[osd]
+position = "top_right"
+
+[plugins]
+enabled = []
+
+[shell]
+font_family = "JetBrainsMono NF"
+
+    [shell.launcher]
+    layout = "simple"
+
+    [shell.panel]
+    wallpaper_position = "center"
+
+[theme]
+builtin = "Kanagawa"
+mode = "dark"
+wallpaper_scheme = "m3-content"
+
+[wallpaper]
+directory = "/home/kxkniffen/Wallpapers"
+
+    [wallpaper.default]
+    path = "/home/kxkniffen/Wallpapers/mountain-night-wallpaper_scaled.jpg"
+
+    [wallpaper.last]
+    path = "/home/kxkniffen/Wallpapers/mountain-night-wallpaper_scaled.jpg"
+
+    [wallpaper.monitors.DP-1]
+    path = "/home/kxkniffen/Wallpapers/mountain-night-wallpaper_scaled.jpg"
+
+    [wallpaper.monitors.DP-2]
+    path = "/home/kxkniffen/Wallpapers/mountain-night-wallpaper_scaled.jpg"
+
+    [wallpaper.monitors.DP-3]
+    path = "/home/kxkniffen/Wallpapers/mountain-night-wallpaper_scaled.jpg"
+
+[weather]
+unit = "imperial"
